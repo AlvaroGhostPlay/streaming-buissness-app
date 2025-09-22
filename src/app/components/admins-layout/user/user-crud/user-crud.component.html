@@ -1,0 +1,86 @@
+<form action="" (ngSubmit)="onSubmit(userForm)" #userForm="ngForm">
+  <fieldset>
+    <legend>Contactanos llenando todos los datos</legend>
+    <div class="contacto__contenedor">
+      <div class="campo">
+        <label>Usuario</label>
+        <input class="input-text" type="text" placeholder="Usuario" [(ngModel)]="user.username" name="uaername">
+      </div>
+      <div class="campo">
+        <label>Nombre</label>
+        <input class="input-text" type="text" placeholder="Nombre" [(ngModel)]="user.client.name" name="name">
+      </div>
+      <div class="campo">
+        <label>Apellido</label>
+        <input class="input-text" type="text" placeholder="Apellido" [(ngModel)]="user.client.lastname" name="lastname">
+      </div>
+      <div class="campo">
+        <label>Correo</label>
+        <input class="input-text" type="email" placeholder="Correo" [(ngModel)]="user.client.email" name="emal">
+      </div>
+      @if (user.id == 0 || user.id == undefined){
+        <div class="campo">
+          <label>Contraseña</label>
+          <input class="input-text" [(ngModel)]="user.password" name="password" placeholder="Contraseña" type="password">
+        </div>
+      }
+
+
+    </div>
+    <div class="campo">
+      <label>Rol</label>
+      <select name="role" [(ngModel)]="selectedRole">
+        @if(user.roles == null || user.roles == undefined){
+          <option selected [ngValue]="null" >---Selecciona Rol---</option>
+        } @else{
+          <option disabled [ngValue]="null" >---Selecciona Rol---</option>
+        }
+        @for(r of roles; track r.id){
+          @if(r.id != null && user.roles.length == 1){
+            <option selected [ngValue]="r.role">{{ r.role }}</option>
+          } @else {
+            <option [ngValue]="r.role">{{ r.role }}</option>
+          }
+        }
+      </select>
+    </div>
+
+    <!-- TELÉFONOS: lista dinámica, bindeo directo al arreglo -->
+    @for (p of user.client.phones; let i = $index; track p.id){
+      <div class="campo">
+        <label>Teléfono {{ i + 1 }}:</label>
+        <input class="input-text" [(ngModel)]="p.number" [name]="'tel'+i" type="text">
+
+        <label>Tipo</label>
+        <select [(ngModel)]="p.type" [name]="'type'+i"  [compareWith]="byPhoneType" >
+          @if (p.type!=null){
+            <option disabled [ngValue]="null">---Seleccione Tipo---</option>
+            @for(t of phoneType; track t.id){
+              @if(p.type.code == t.code){
+                <option [ngValue]="t" selected>{{ t.code }}</option>
+              } @else {
+                <option [ngValue]="t">{{ t.code }}</option>
+              }
+            }
+          } @else {
+            <option selected [ngValue]="null">---Seleccione Tipo---</option>
+            @for(t of phoneType; track t.id){
+                <option [ngValue]="t">{{ t.code }}</option>}
+            }
+
+        </select>
+
+        @if(user.client.phones.length > 1){
+          <button type="button" (click)="removePhone(i)" >Quitar</button>
+        }
+      </div>
+    }
+
+
+    <button type="button" (click)="addPhone()" [disabled]="user.client.phones.length >= 2">Agregar teléfono</button>
+    <div class="alinear-derecha flex">
+      <input class="boton" type="submit" value="Enviar">
+      <input class="boton" type="submit" (click)="clear()" value="Limpiar">
+    </div>
+  </fieldset>
+</form>

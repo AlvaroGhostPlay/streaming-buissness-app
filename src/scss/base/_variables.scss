@@ -1,0 +1,29 @@
+$fuente_principal:"Krub", sans-serif;
+
+// Colores
+$verde: #6230eb;
+$rosa: #ff0a35;
+$amarillo: #FDDA00;
+$morado: #752F97;
+$negro: #000000;
+$blanco: #FFFFFF;
+$azul: #003;
+$oscuro: #000000;
+$grisClaro: #272727;
+$grisOscuro: #151515;
+$colorFontGris: #C7C7C7;
+$noTanBlanco: #f7f7f7;
+$menosBlanco: #F2F2F2;
+$noTanNegro: #595959;
+$azulClaro: #5454ff;
+$azulClaro2: #c8cfd7;
+//media queries
+
+$telefono: 480px;
+$tablet:769px;
+$desktop:1200px;
+$desktopXL: 1400px;
+
+//medidas
+$wrap: 180rem;
+$overlap: clamp(2rem, 6vw, 6rem);

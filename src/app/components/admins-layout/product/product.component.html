@@ -1,0 +1,16 @@
+<div class="contenedor">
+
+  <div class="contenidoProduct__contenedor">
+    <h1 class="contenidoProduct__titulo margin-0">Nuestros Productos</h1>
+     <button class="contenidoProduct__boton">
+       Agregar
+     </button>
+  </div>
+
+  <div class="contenidoProduct">
+    @for(card of cards; track card.id){
+      <contenido [card]="card"/>
+    }
+  </div>
+</div>
+

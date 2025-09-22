@@ -23,11 +23,12 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "src/img",
+                "output": "img/"
               }
-            ],
+],
             "styles": [
-              "src/styles.css"
+              "src/css/app.css"
             ],
             "scripts": [],
             "server": "src/main.server.ts",
@@ -97,5 +98,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

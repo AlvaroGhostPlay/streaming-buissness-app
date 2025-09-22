@@ -1,0 +1,40 @@
+<ul class="paginator">
+  @if (paginator.totalPages > 1){
+    @if(paginator.number > 0){
+      <li class="paginator__list">
+        <a [routerLink]="[url, 0]">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-caret-left-square-fill" viewBox="0 0 16 16">
+            <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm10.5 10V4a.5.5 0 0 0-.832-.374l-4.5 4a.5.5 0 0 0 0 .748l4.5 4A.5.5 0 0 0 10.5 12"/>
+          </svg>
+        </a>
+      </li>
+    }
+    @if(paginator.number > 0){
+      <li class="paginator__list">
+        <a [routerLink]="[url, paginator.number-1]">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+            <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+          </svg>
+        </a>
+      </li>
+    }
+    @if (paginator.number < paginator.totalPages-1){
+      <li class="paginator__list">
+        <a [routerLink]="[url, paginator.number+1]">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+            <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+          </svg>
+        </a>
+      </li>
+    }
+    @if (paginator.number < paginator.totalPages-1){
+      <li class="paginator__list">
+        <a [routerLink]="[url, paginator.totalPages -1]">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-caret-right-square-fill" viewBox="0 0 16 16">
+            <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z"/>
+          </svg>
+        </a>
+      </li>
+    }
+  }
+</ul>

@@ -1,0 +1,69 @@
+<main class="users">
+  <div class="contenedor">
+    <div class="users__cabecera">
+      <div class="users__agregar">
+        <button class="users__boton boton" type="button" (click)="onAdd()">Agregar</button>
+      </div>
+      <div class="users__buscador ">
+        <input class="users__buscador--inpout margin-top-2" type="text" placeholder="Buscar por teléfono">
+        <input class="users__buscador--inpout margin-top-2" type="text" placeholder="Buscar por nombre">
+      </div>
+    </div>
+    @if (users?.length) {
+      <table class="users__table">
+        <caption>Listado de usuarios</caption>
+        <thead>
+        <tr>
+          <th>Username</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Email</th>
+          <th>Teléfonos</th>
+          <th>Roles</th>
+          <th>Editar</th>
+          <th>Eliminar</th>
+        </tr>
+        </thead>
+          @for (user of users; track user.id) {
+            <tr>
+              <td>{{ user.username }}</td>
+              <td>{{ user.client.name }}</td>
+              <td>{{ user.client.lastname }}</td>
+              <td>{{ user.client.email }}</td>
+
+              <!-- Teléfonos -->
+              <td>
+                @if (user.client.phones?.length) {
+                  <ul class="telefono-lista">
+                    @for (phone of user.client.phones; track phone.id ) {
+                      <li>{{ phone.number ?? phone }}</li>
+                    }
+                  </ul>
+                } @else {
+                  <em>—</em>
+                }
+              </td>
+
+              <!-- Roles (soporta array de strings o de objetos {id,name}) -->
+              <td>
+                @if (user.roles?.length) {
+                  <ul class="rol-lista">
+                    @for (rol of user.roles; track rol ?? $index) {
+                      <li>{{ rol ?? rol }}</li>
+                    }
+                  </ul>
+                } @else {
+                  <em>—</em>
+                }
+              </td>
+              <td><button class="boton users__botonFormulario users__botonFormulario--colorAzul" type="button" (click)="onEdit(user)">Editar</button></td>
+              <td><button class="boton users__botonFormulario" type="button" (click)="onDelete(user)">Eliminar</button></td>
+            </tr>
+          }
+      </table>
+      <auth-paginator [paginator]="paginator" [url]="url"/>
+    } @else {
+      <p>No hay usuarios para mostrar.</p>
+    }
+  </div>
+</main>

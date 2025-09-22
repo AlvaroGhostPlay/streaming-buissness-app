@@ -1,0 +1,29 @@
+<div class="productos-outer">
+  <!-- Flechas -->
+
+  <div class="productos contenedor_contenido">
+    <h2 class="contenido_titulo">Nuestros Productos</h2>
+
+    <div class="contenido" #row (scroll)="onRowsScroll()">
+      @for (card of cards; track card.id){
+        <carrusel-ex [card]="card"/>
+      }
+    </div>
+  </div>
+  <button
+    class="hero__arrow hero__arrow--prev"
+    type="button"
+    aria-label="Anterior"
+    (click)="scrollRow('prev')"
+    [disabled]="!canPrev">
+    &lsaquo; <!-- también podrías usar &lt; -->
+  </button>
+  <button
+    class="hero__arrow hero__arrow--next"
+    type="button"
+    aria-label="Siguiente"
+    (click)="scrollRow('next')"
+    [disabled]="!canNext" >
+    &rsaquo; <!-- o &gt; -->
+  </button>
+</div>

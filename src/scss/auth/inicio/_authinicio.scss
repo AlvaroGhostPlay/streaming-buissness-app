@@ -1,0 +1,43 @@
+@use "../../base/variables" as v;
+@use "../../base/mixins" as m;
+
+.content{
+  margin-top: 2rem;
+  gap: 2rem;
+}
+
+.content__contenido{
+  margin-top: 4rem;
+}
+
+.content__man{
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% auto;
+  width: 100%;
+  aspect-ratio: calc(400/200);
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+.content__titulo{
+  font-size: 3rem;
+}
+
+@include m.telefono{
+  .content{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@include m.tablet{
+  .content{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    .content__man{
+      margin: 0;
+    }
+  }
+}
+

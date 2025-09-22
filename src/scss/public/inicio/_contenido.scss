@@ -1,0 +1,158 @@
+@use '../../base/variables' as v;
+@use '../../base/mixins' as m;
+
+.contenido_titulo{
+  font-size: 2rem;
+}
+
+@include m.tablet{
+  .contenido_titulo{
+    font-size: 2.8rem;
+  }
+}
+
+.color_black{
+  color: v.$blanco;
+}
+
+/*.contenido{
+  position: relative;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  gap: 3rem;
+  flex-wrap: wrap;
+}*/
+
+.contenido{
+  margin-top: -4rem;
+  display: grid;
+  grid-auto-flow: column;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding-block: 0.5rem 1rem;
+  gap: 3rem;
+  /* Ocultar scrollbar visual */
+  scrollbar-width: none;
+  &::-webkit-scrollbar { display: none; }
+
+  /* Cuántas tarjetas visibles por viewport (porcentaje simple) */
+  grid-auto-columns: 23%;        // 4 por vista por defecto (<= 767)
+}
+
+@include m.tablet {
+  .contenido { grid-auto-columns: 18.5%; } // 5 visibles
+}
+
+/* Muy ancho: 6 por fila */
+@media (min-width: 1670px){
+  .contenido { grid-auto-columns: 15.5%; } // 6 visibles
+}
+
+.contenido__seccion{
+  min-width: 0;    /* permite encoger por debajo del contenido */
+}
+/* Cada tarjeta */
+.contenido__seccion {
+  min-width: 0;
+  scroll-snap-align: start;    // las tarjetas “anclan” al inicio al parar el scroll
+}
+
+
+.contenido__imagen{
+  width: 100%;               /* ocupa todo el ancho de la columna */
+  aspect-ratio: 27 / 40;     /* tu 27rem x 40rem (W:H) pero fluido */
+  height: auto;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% auto; /* llena ancho, alto proporcional */
+  background-color: #fff;
+}
+/*
+.contenido{
+  grid-auto-flow: row;                 /* deja de forzar fila única */
+  /*grid-template-columns: repeat(4, 1fr); /* 4 por fila, cada una 25% */
+
+/**
+@include m.tablet{
+  .contenido{
+    grid-auto-flow: row;                 /* deja de forzar fila única */
+  /**  grid-template-columns: repeat(5, 1fr); /* 4 por fila, cada una 25% */
+ /** }
+}**/
+
+/**@media (min-width: 1670px){
+  .contenido{
+    grid-template-columns: repeat(6, 1fr); /* 4 por fila, cada una 25% */
+ /** }
+}**/
+
+.contenido__seccion{
+  display: block;
+}
+
+.main-overlap{
+  position: relative;
+  z-index: 4;                   /* encima del hero */
+  margin-top: calc(clamp(2rem, 8.5vw, 20rem) * -1);
+  margin-left: 2rem;
+}
+
+/*
+/* El wrapper será el referente de posicionamiento
+.productos {
+  position: relative;           // ahora las flechas se posicionan respecto a este contenedor
+  overflow: visible;// por si algún reset te lo cambió
+  container-type: inline-size; //para que los hijos sean responseve
+  }*/
+
+.productos{
+  margin-top: 9rem;
+  position: relative;
+  container-type: inline-size;
+  overflow: hidden;
+}
+
+.productos-outer{
+  position: relative;
+  overflow: visible;
+  margin-top: -5rem;
+}
+/* Flechas del carrusel de productos (reusamos tu estilo base) */
+.productos .hero__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 4rem;
+  height: 6rem;
+  border: 0;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  background: linear-gradient(to right, rgba(0,0,0,.35), transparent);
+  color: v.$grisClaro;
+  font-size: 4rem;
+  line-height: 1;
+
+  &:disabled { opacity: .3; pointer-events: none; }
+  @media (hover:hover) { &:hover { color: v.$blanco; } }
+}
+
+.productos .hero__arrow--prev {
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.productos .hero__arrow--next {
+  right: 0;
+  transform: translateY(-50%); // reutiliza el mismo gradiente
+}
+
+.productos-outer .hero__arrow{
+    &--prev { left: 0;  transform: translate(20%, -50%); }  /* fuera a la izquierda */
+    &--next { right: 0; transform: translate(0%,  -50%); }  /* fuera a la derecha */
+}
+
+

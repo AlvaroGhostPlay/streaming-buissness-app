@@ -1,0 +1,61 @@
+@use "../../base/variables" as v;
+@use "../../base/mixins" as m;
+
+.header{
+  background-color: v.$grisClaro;
+}
+
+.navegacion{
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.navegacion__enlace{
+  display: block;
+  color: v.$colorFontGris;
+  text-align: center;
+  width: 100%;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.navegacion__enlace:hover{
+  background-color: v.$grisClaro;
+}
+
+.navegacion__logo {
+  height: auto;
+  /* Opcional: limita tamaño en móvil y crece de forma responsiva */
+  object-fit: contain;
+}
+
+@include m.tablet {
+
+  .barra {
+    display: flex;
+    align-items: center;
+    .navegacion__logo {
+      display: inline-block;
+      flex: 0 0 50%;          /* <- ocupa el 50% de la barra, no crece */
+      margin-left: auto;      /* <- se pega a la derecha (mitad derecha) */
+      font-size: 3rem;
+    }
+  }
+
+  .navegacion {
+    margin-left: auto;
+    flex: 0 0 50%;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navegacion__enlace {
+    width: auto;
+    &:hover{
+      color: v.$blanco;
+    }
+  }
+}

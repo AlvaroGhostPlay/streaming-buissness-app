@@ -1,0 +1,12 @@
+@use "../../base/variables" as v;
+
+.barra{
+  padding: 2rem 0;
+}
+
+.navegacion__logo{
+  font-size: 2rem;
+  color: v.$colorFontGris;
+  font-weight: bold;
+
+}

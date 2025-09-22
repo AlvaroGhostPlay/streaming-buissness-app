@@ -1,0 +1,55 @@
+@use '../../base/variables' as v;
+@use '../../base/mixins' as m;
+
+.login--bg{
+  text-align: center;
+  max-width: 80rem;
+  width: 80%;
+  border-radius: 2rem;
+  padding: 5rem 5rem;
+  margin: 20rem auto; ;
+}
+
+.login__content{
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.login__input{
+  margin-top: 2rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid v.$grisClaro;
+  color: v.$blanco;
+
+  &::placeholder{
+    color: v.$blanco;
+  }
+}
+
+.boton__login{
+  margin-top: 3rem;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: v.$grisClaro;
+  border: none;
+  color: v.$blanco;
+  border-radius: 1rem;
+  cursor: pointer;
+  outline: none;
+  width: 100%;
+}
+
+@include m.tablet{
+  .boton__login{
+    align-items: center;
+    width: auto;
+    padding: 2rem 1rem;
+  }
+}
+
+
+

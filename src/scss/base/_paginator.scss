@@ -1,0 +1,17 @@
+@use "variables" as v;
+.paginator{
+  display: flex;
+  margin: 1rem 0 0 0 ;
+  padding: 0;
+  gap: 2rem;
+  .paginator__list{
+    text-decoration: none;
+    list-style: none;
+    a{
+      color: v.$colorFontGris;
+      &:hover{
+        color: v.$negro,
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<main>
+  <div class="nosotros__titulo--bg">
+    <h1 class="nosotros__titulo">Nosotros</h1>
+  </div>
+  <div class="contenedor">
+    <div>
+      @for (nostro of nosotros; track nostro.id){
+        <nosotros-contenido [nosotro]="nostro"/>
+      }
+    </div>
+  </div>
+
+</main>

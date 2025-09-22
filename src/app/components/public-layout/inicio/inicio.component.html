@@ -1,0 +1,58 @@
+<section>
+  <div class="hero" [style.background-image]="bgImage"
+       #hero
+       (pointerdown)="onHeroPointerDown($event)"
+       (pointermove)="onHeroPointerMove($event)"
+       (pointerup)="onHeroPointerUp($event)"
+       (pointercancel)="onHeroPointerCancel($event)"
+       (pointerleave)="onHeroPointerCancel($event)"
+       (wheel)="onHeroWheel($event)">
+
+    <div #fade class="hero__fade"
+         [style.background-image]="pendingBg"
+         [class.is-visible]="isFading">
+
+    </div>
+
+    @if (slides.length && currentSlide) {
+      <div class="hero__contenido contenedor_contenido">
+      <button class="hero__arrow hero__arrow--prev" type="button" aria-label="Anterior" (click)="prev()" (pointerdown)="$event.stopPropagation()">&lsaquo;</button>
+      <button class="hero__arrow hero__arrow--next" type="button" aria-label="Siguiente" (click)="next()" (pointerdown)="$event.stopPropagation()">&rsaquo;</button>
+        <a href="#">
+          <div class="hero__titulo" [style.background-image]="bgImageTitle"></div>
+        </a>
+
+        <div class="hero__clasificaion">
+          <p class="hero__clasificaion--edad">nada por ahora</p>
+          <ul class="hero__contenido--ul">
+            <li>jhlñkjlñkjklñjñklj</li>
+          </ul>
+        </div>
+
+        <div class="hero__descripcion">
+          <p class="margin-0">{{ currentSlide.description || currentSlide.subtitle }}</p>
+        </div>
+
+        <div class="hero__botones">
+          <a href="#" class="boton">Ver</a>
+        </div>
+      </div>
+    } @else {
+      <div class="hero__contenido contenedor_contenido">
+        <p>Cargando hero…</p>
+      </div>
+    }
+  </div>
+</section>
+
+<main class="main-overlap">
+  <contenido/>
+</main>
+
+<section class="seccion">
+  <seccion-inicio/>
+</section>
+
+<section>
+  <contenido-ex/>
+</section>

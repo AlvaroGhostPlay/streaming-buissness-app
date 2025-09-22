@@ -1,0 +1,22 @@
+<div class="contenedor login--bg">
+  <div>
+    <h1>Acceder</h1>
+    <div >
+      <form (ngSubmit)="onSubmit()" class="login__content">
+        <input class="login__input margin-top-2" placeholder="Usuario" [(ngModel)]="user.username"
+               name="username"
+               type="text"
+               required
+               autocomplete="username">
+        <input class="login__input margin-top-2"
+               name="password"
+               type="password" placeholder="Contraseña" [(ngModel)]="user.password">
+        <div >
+          <button class="margin-top-2 boton__login">
+            Acceder
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,1487 @@
+@charset "UTF-8";
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input { /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type=search] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+  display: none;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  scroll-padding-top: 0rem;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Krub", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 2rem;
+}
+
+body.theme-dark {
+  background: #000000;
+  color: #FFFFFF;
+}
+
+body.theme-light {
+  background: #f7f7f7;
+  color: #000000;
+}
+
+p {
+  line-height: 1.5;
+  font-size: 1.5rem;
+}
+
+.contenedor {
+  width: 95%;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.contenedor_contenido {
+  width: 95%;
+  max-width: 177rem;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  margin: 0 0 5rem 0;
+  font-weight: 900;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 4.6rem;
+}
+
+h3 {
+  font-size: 6rem;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+body > section {
+  padding: 10rem 0;
+}
+
+.margin-top-2 {
+  margin: 2rem 0 0 0;
+}
+
+.margin-top-1 {
+  margin: 1rem 0 0 0;
+}
+
+.paginator {
+  display: flex;
+  margin: 1rem 0 0 0;
+  padding: 0;
+  gap: 2rem;
+}
+.paginator .paginator__list {
+  text-decoration: none;
+  list-style: none;
+}
+.paginator .paginator__list a {
+  color: #C7C7C7;
+}
+.paginator .paginator__list a:hover {
+  color: #000000;
+}
+
+.contacto {
+  margin-top: 2rem;
+  border-radius: 1rem;
+}
+
+.contacto__titulo {
+  text-align: center;
+  font-size: 4rem;
+}
+
+.contacto__redes {
+  justify-items: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 4rem;
+}
+
+.contacto__numero {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.contacto__numero--des {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  color: white;
+}
+
+.contacto__titulo--color {
+  background-color: #151515;
+  padding: 2rem 0;
+}
+
+.contacto__form {
+  background-color: #272727;
+  width: min(60rem, 100%);
+  margin: 2rem auto 0 auto;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+.contacto__form fieldset {
+  border: none;
+}
+.contacto__form legend {
+  text-align: center;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 2rem;
+}
+@media (min-width: 769px) {
+  .contacto__form .contacto__contenedor {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem;
+    grid-template-rows: auto auto 20rem;
+  }
+  .contacto__form .campo:nth-child(3), .contacto__form .campo:nth-child(4) {
+    grid-column: 1/3;
+  }
+}
+
+.campo {
+  margin: 1rem;
+}
+
+.campo label {
+  color: #FFFFFF;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.input-text {
+  width: 100%;
+  border: none;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.alinear-derecha .boton {
+  width: 100%;
+}
+
+@media (min-width: 769px) {
+  .alinear-derecha .boton {
+    width: auto;
+    margin-top: 6rem;
+  }
+}
+.flex {
+  display: flex;
+}
+
+.alinear-derecha {
+  justify-content: flex-end;
+}
+
+.campo textarea {
+  height: 20rem;
+  width: 100%;
+}
+
+.boton {
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 1rem 3rem;
+  margin-top: 1rem;
+  text-transform: uppercase;
+  border-radius: 0.5rem;
+  width: 90%;
+  text-align: center;
+  border: none;
+  background-color: #C7C7C7;
+}
+
+.boton:hover {
+  cursor: pointer;
+}
+
+.hero {
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% auto;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2.1333333333;
+  touch-action: pan-y;
+  user-select: none;
+  overflow: hidden;
+}
+
+.hero__contenido {
+  display: grid;
+  background-size: 100% auto; /* igual a lo que usabas */
+  transition: opacity 0.35s ease; /* el fade */
+  touch-action: pan-y;
+  position: absolute;
+  inset: 0; /* ocupa todo el hero */
+  align-content: center; /* vertical */
+  justify-items: start; /* horizontal */
+  padding: clamp(1rem, 3vw, 2rem);
+  container-type: inline-size;
+  z-index: 2;
+}
+
+.hero__fade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% auto;
+  opacity: 0; /* empieza oculto */
+  transition: opacity 0.35s ease; /* anima opacidad */
+  will-change: opacity;
+}
+
+.hero__fade.is-visible {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .hero__descripcion {
+    display: none;
+  }
+}
+@media (min-width: 769px) {
+  .hero__descripcion {
+    margin-top: 2rem;
+  }
+}
+.boton {
+  color: #000000;
+}
+
+.hero__titulo {
+  display: inline-block;
+  margin-top: -2rem;
+  /* caja proporcional 2:1 (400x200) que escala con el ancho del .hero */
+  aspect-ratio: 2/1;
+  width: clamp(10rem, 30cqw, 40rem); /* 20.833% del ancho del hero, min 20rem, max 40rem */
+  block-size: auto;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: contain; /* que quepa sin recortar */
+  /* setéala desde Angular con una CSS var o con style binding */
+}
+
+@container (max-width: 520px) {
+  .hero__titulo {
+    inline-size: clamp(8rem, 40cqw, 28rem);
+  }
+}
+.hero__clasificaion {
+  display: flex;
+  align-items: center;
+}
+
+.hero__contenido--ul {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.hero__clasificaion--edad {
+  background-color: #272727;
+  padding: 0.5rem;
+  margin: 0;
+}
+
+.margin-0 {
+  margin: 0;
+}
+
+.hero__botones {
+  margin-top: 2rem;
+}
+
+/**aprender esto para poder hacer el hero completo y preguntar como es que funciona*/
+.hero__arrow {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .hero__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3; /* sobre el contenido */
+    width: 5rem;
+    height: 5rem;
+    border: 0;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    /* colores (usa tus variables si querés) */
+    color: #C7C7C7;
+    font-size: 10rem;
+    line-height: 1;
+    /* accesibilidad */
+    /* hover en desktop */
+    background-color: transparent;
+  }
+  .hero__arrow:focus-visible {
+    outline: 3px solid #272727;
+    outline-offset: 2px;
+  }
+}
+@media (min-width: 769px) and (hover: hover) {
+  .hero__arrow:hover {
+    color: #FFFFFF;
+  }
+}
+@media (min-width: 769px) {
+  .hero__contenido .hero__arrow { /* fuera a la izquierda */
+    /* fuera a la derecha */
+  }
+  .hero__contenido .hero__arrow--prev {
+    left: 0;
+    transform: translate(-50%, -250%);
+  }
+  .hero__contenido .hero__arrow--next {
+    right: 0;
+    transform: translate(40%, -250%);
+  }
+}
+.contenido_titulo {
+  font-size: 2rem;
+}
+
+@media (min-width: 769px) {
+  .contenido_titulo {
+    font-size: 2.8rem;
+  }
+}
+.color_black {
+  color: #FFFFFF;
+}
+
+/*.contenido{
+  position: relative;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  gap: 3rem;
+  flex-wrap: wrap;
+}*/
+.contenido {
+  margin-top: -4rem;
+  display: grid;
+  grid-auto-flow: column;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding-block: 0.5rem 1rem;
+  gap: 3rem;
+  /* Ocultar scrollbar visual */
+  scrollbar-width: none;
+  /* Cuántas tarjetas visibles por viewport (porcentaje simple) */
+  grid-auto-columns: 23%;
+}
+.contenido::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .contenido {
+    grid-auto-columns: 18.5%;
+  }
+}
+/* Muy ancho: 6 por fila */
+@media (min-width: 1670px) {
+  .contenido {
+    grid-auto-columns: 15.5%;
+  }
+}
+.contenido__seccion {
+  min-width: 0; /* permite encoger por debajo del contenido */
+}
+
+/* Cada tarjeta */
+.contenido__seccion {
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+.contenido__imagen {
+  width: 100%; /* ocupa todo el ancho de la columna */
+  aspect-ratio: 27/40; /* tu 27rem x 40rem (W:H) pero fluido */
+  height: auto;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% auto; /* llena ancho, alto proporcional */
+  background-color: #fff;
+}
+
+/*
+.contenido{
+  grid-auto-flow: row;                 /* deja de forzar fila única */
+/*grid-template-columns: repeat(4, 1fr); /* 4 por fila, cada una 25% */
+/**
+@include m.tablet{
+  .contenido{
+    grid-auto-flow: row;                 /* deja de forzar fila única */
+/**  grid-template-columns: repeat(5, 1fr); /* 4 por fila, cada una 25% */
+/** }
+}**/
+/**@media (min-width: 1670px){
+  .contenido{
+    grid-template-columns: repeat(6, 1fr); /* 4 por fila, cada una 25% */
+/** }
+}**/
+.contenido__seccion {
+  display: block;
+}
+
+.main-overlap {
+  position: relative;
+  z-index: 4; /* encima del hero */
+  margin-top: calc(clamp(2rem, 8.5vw, 20rem) * -1);
+  margin-left: 2rem;
+}
+
+/*
+/* El wrapper será el referente de posicionamiento
+.productos {
+  position: relative;           // ahora las flechas se posicionan respecto a este contenedor
+  overflow: visible;// por si algún reset te lo cambió
+  container-type: inline-size; //para que los hijos sean responseve
+  }*/
+.productos {
+  margin-top: 9rem;
+  position: relative;
+  container-type: inline-size;
+  overflow: hidden;
+}
+
+.productos-outer {
+  position: relative;
+  overflow: visible;
+  margin-top: -5rem;
+}
+
+/* Flechas del carrusel de productos (reusamos tu estilo base) */
+.productos .hero__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 4rem;
+  height: 6rem;
+  border: 0;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.35), transparent);
+  color: #272727;
+  font-size: 4rem;
+  line-height: 1;
+}
+.productos .hero__arrow:disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+@media (hover: hover) {
+  .productos .hero__arrow:hover {
+    color: #FFFFFF;
+  }
+}
+
+.productos .hero__arrow--prev {
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.productos .hero__arrow--next {
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.productos-outer .hero__arrow { /* fuera a la izquierda */
+  /* fuera a la derecha */
+}
+.productos-outer .hero__arrow--prev {
+  left: 0;
+  transform: translate(20%, -50%);
+}
+.productos-outer .hero__arrow--next {
+  right: 0;
+  transform: translate(0%, -50%);
+}
+
+.seccion {
+  max-width: 190rem;
+  width: 90%;
+  margin: 4rem auto;
+}
+
+.seccion__image {
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% auto;
+  width: 100%;
+  aspect-ratio: 2.9256055363;
+  user-select: none;
+  overflow: hidden;
+}
+
+.footer {
+  background-color: #272727;
+}
+
+.footer__ultimo {
+  font-size: 2rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.footer__ultimo--derechos {
+  font-size: 2rem;
+}
+
+.footer__primero .footer__primero--redes {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.footer__primero .footer__primero--nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.footer__primero .footer__primero--nav .enlace {
+  color: #C7C7C7;
+}
+.footer__primero .footer__primero--nav .enlace:hover {
+  color: #FFFFFF;
+}
+
+.footer--bkc {
+  margin-top: 2rem;
+  background-color: #151515;
+  padding: 3rem;
+}
+
+.enlace__redes {
+  color: #C7C7C7;
+}
+.enlace__redes:hover {
+  color: #FFFFFF;
+}
+
+@media (min-width: 769px) {
+  .footer__primero {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 0;
+  }
+  .footer__primero .footer__primero--nav {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .footer__primero .footer__primero--redes {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0;
+  }
+}
+.login--bg {
+  text-align: center;
+  max-width: 80rem;
+  width: 80%;
+  border-radius: 2rem;
+  padding: 5rem 5rem;
+  margin: 20rem auto;
+}
+
+.login__content {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.login__input {
+  margin-top: 2rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #272727;
+  color: #FFFFFF;
+}
+.login__input::placeholder {
+  color: #FFFFFF;
+}
+
+.boton__login {
+  margin-top: 3rem;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: #272727;
+  border: none;
+  color: #FFFFFF;
+  border-radius: 1rem;
+  cursor: pointer;
+  outline: none;
+  width: 100%;
+}
+
+@media (min-width: 769px) {
+  .boton__login {
+    align-items: center;
+    width: auto;
+    padding: 2rem 1rem;
+  }
+}
+/* Estructura de la barra */
+.barra {
+  display: grid;
+  grid-template-columns: 33% 67%;
+  gap: 1rem;
+  align-items: center;
+  justify-items: center;
+}
+.barra .navegacion__logo {
+  font-size: 1.8rem;
+  color: #C7C7C7;
+}
+.barra .navegacion__logo:hover {
+  color: #FFFFFF;
+}
+
+@media (min-width: 769px) {
+  .barra {
+    display: flex;
+  }
+}
+/* 1) Botón hamburguesa: visible solo en móvil */
+.barra__toggle {
+  z-index: 1;
+  pointer-events: auto;
+  width: 3.2rem;
+  height: 3.2rem;
+  border: 0;
+  background: transparent;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 2.2rem;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+@media (min-width: 769px) {
+  .barra__toggle {
+    display: none;
+  }
+}
+/* 2) Nav escritorio: oculto en móvil, visible en desktop */
+.navegacion {
+  display: none;
+  gap: 0 2rem;
+}
+
+@media (min-width: 769px) {
+  .navegacion {
+    display: flex;
+  }
+}
+/* 3) Drawer móvil (off-canvas) */
+.drawer {
+  display: none; /* cuando está cerrado NO cubre nada */
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+}
+
+.drawer__panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 28rem;
+  background: #151515;
+  color: #FFFFFF;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.drawer__nav .navegacion__enlace {
+  display: block;
+  padding: 1rem 0;
+  color: #C7C7C7;
+}
+.drawer__nav .navegacion__enlace:hover {
+  color: #FFFFFF;
+}
+
+.drawer__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.3s ease;
+  z-index: 1;
+  pointer-events: auto;
+}
+
+.drawer--open {
+  display: block; /* solo cuando abras, aparece */
+}
+
+.drawer--open .drawer__panel {
+  z-index: 2;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+.drawer--open .drawer__backdrop {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+/* En desktop, el drawer no se muestra */
+@media (min-width: 769px) {
+  .drawer {
+    display: none;
+  }
+}
+/* Botón cerrar del drawer */
+.drawer__close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 2.8rem;
+  height: 2.8rem;
+  border: 0;
+  background: transparent;
+  color: #FFFFFF;
+  font-size: 2.2rem;
+  cursor: pointer;
+}
+
+.header {
+  background-color: #272727;
+}
+
+.navegacion {
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.navegacion__enlace {
+  display: block;
+  color: #C7C7C7;
+  text-align: center;
+  width: 100%;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.navegacion__enlace:hover {
+  background-color: #272727;
+}
+
+.navegacion__logo {
+  height: auto;
+  /* Opcional: limita tamaño en móvil y crece de forma responsiva */
+  object-fit: contain;
+}
+
+@media (min-width: 769px) {
+  .barra {
+    display: flex;
+    align-items: center;
+  }
+  .barra .navegacion__logo {
+    display: inline-block;
+    flex: 0 0 50%; /* <- ocupa el 50% de la barra, no crece */
+    margin-left: auto; /* <- se pega a la derecha (mitad derecha) */
+    font-size: 3rem;
+  }
+  .navegacion {
+    margin-left: auto;
+    flex: 0 0 50%;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .navegacion__enlace {
+    width: auto;
+  }
+  .navegacion__enlace:hover {
+    color: #FFFFFF;
+  }
+}
+.barra {
+  padding: 2rem 0;
+}
+
+.navegacion__logo {
+  font-size: 2rem;
+  color: #C7C7C7;
+  font-weight: bold;
+}
+
+.nosotros__titulo {
+  text-align: center;
+  margin: 0;
+}
+
+.nosotros__titulo--bg {
+  background-color: #151515;
+  padding: 2rem;
+}
+
+.nosotros__caja {
+  margin-top: 8rem;
+}
+
+.nosotros__caja:nth-last-child(1) {
+  margin-bottom: 5rem;
+}
+
+.nosotros__imagen {
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  width: clamp(240px, 80vw, 620px);
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-radius: 1rem;
+  margin: 0 auto;
+}
+
+.nosotros__tituloh2 {
+  font-size: 2.8rem;
+}
+
+.nosotros__descripcion {
+  margin-top: 2rem;
+}
+
+@media (min-width: 769px) {
+  .nosotros__caja {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    align-items: center;
+    margin-top: 8rem;
+  }
+  .nosotros__caja .nosotros__imagen {
+    width: 100%;
+    max-width: none;
+    aspect-ratio: auto;
+    height: clamp(240px, 32vw, 420px);
+  }
+  .nosotros__caja .nosotros__tituloh2 {
+    font-size: 4rem;
+  }
+  .nosotros__caja .nosotros__descripcion {
+    margin: 0;
+  }
+}
+.headerAuth {
+  background-color: #FFFFFF;
+}
+.headerAuth .navegacion__enlace {
+  color: #000000;
+  background-color: #FFFFFF;
+}
+.headerAuth .navegacion__enlace:hover {
+  color: #595959;
+}
+.headerAuth .navegacion__logo {
+  color: #000000;
+}
+.headerAuth .navegacion__logo:hover {
+  color: #595959;
+}
+.headerAuth .barra__toggle {
+  color: #000000;
+}
+.headerAuth .drawer__panel {
+  background-color: #f7f7f7;
+}
+.headerAuth .drawer__nav .navegacion__enlace:hover {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+.content {
+  margin-top: 2rem;
+  gap: 2rem;
+}
+
+.content__contenido {
+  margin-top: 4rem;
+}
+
+.content__man {
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% auto;
+  width: 100%;
+  aspect-ratio: 2;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+.content__titulo {
+  font-size: 3rem;
+}
+
+@media (min-width: 480px) {
+  .content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 769px) {
+  .content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .content .content__man {
+    margin: 0;
+  }
+}
+.users .users__cabecera {
+  margin: 2rem 0;
+}
+.users .user__agregar {
+  display: flex;
+  justify-content: end;
+}
+.users .users__boton {
+  background-color: #6230eb;
+  color: #FFFFFF;
+}
+.users .users__agregar {
+  display: flex;
+  justify-content: center;
+}
+.users .users__agregar .users__boton {
+  width: 100%;
+}
+@media (min-width: 769px) {
+  .users .users__agregar {
+    justify-content: end;
+  }
+  .users .users__agregar .users__boton {
+    width: auto;
+  }
+}
+.users .users__buscador .users__buscador--inpout {
+  width: 100%;
+  border-radius: 0.5rem;
+  border: none;
+  outline: none;
+  padding: 2rem 1rem;
+}
+@media (min-width: 769px) {
+  .users .users__buscador {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  .users .users__buscador .users__buscador--inpout {
+    width: 50rem;
+  }
+}
+.users .users__table {
+  width: 100%;
+  border: 1px solid #000000;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border-collapse: collapse;
+  border-spacing: 1rem;
+}
+.users caption {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+}
+.users .telefono-lista, .users .rol-lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.users th, .users td {
+  padding: 2rem 0;
+}
+.users thead {
+  background-color: #5454ff;
+  color: #FFFFFF;
+}
+.users tr:nth-child(even) {
+  background-color: #C7C7C7;
+}
+.users tr:hover td {
+  background-color: #c8cfd7;
+}
+.users .users__botonFormulario {
+  background-color: #ff0a35;
+  color: #FFFFFF;
+  font-size: 1.5rem;
+  margin: 0;
+}
+.users .users__botonFormulario--colorAzul {
+  background-color: #5454ff;
+}
+
+.contenidoProduct__contenedor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.contenidoProduct__contenedor .contenidoProduct__boton {
+  cursor: pointer;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  outline: none;
+  background-color: #6230eb;
+  color: #FFFFFF;
+}
+
+.contenidoProduct {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.contenido__seccion {
+  position: relative;
+  overflow: hidden;
+}
+.contenido__seccion .contenido__imagen {
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  background-position: center;
+  display: block;
+}
+.contenido__seccion .contenido__relative {
+  position: absolute;
+  inset: 0;
+  background: rgba(50, 43, 43, 0.6);
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  pointer-events: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 0.75rem;
+}
+.contenido__seccion:hover .contenido__relative {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.contenido__seccion .contenido__btn {
+  font-size: 0.75rem;
+  padding: 0.35rem 0.6rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background: #fff;
+  cursor: pointer;
+}
+
+.color_black {
+  color: #000000;
+}
+
+.contenidoProduct__titulo {
+  font-size: 2.8rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 480px) {
+  .contenidoProduct__titulo {
+    font-size: 4rem;
+  }
+  .contenidoProduct {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 769px) {
+  .contenidoProduct {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.footerAuth .footer__primero {
+  display: flex;
+}
+.footerAuth .footer__primero--nav {
+  display: flex;
+  width: 100%;
+}
+.footerAuth .footer__primero--nav .navegacion__enlace {
+  text-align: center;
+  font-size: 2rem;
+}
+.footerAuth .footer--bkc {
+  background-color: #F2F2F2;
+}
+.footerAuth .footer--bkc .navegacion__enlace {
+  color: #000000;
+}
+.footerAuth .footer--bkc .navegacion__enlace:hover {
+  color: #595959;
+  background-color: #F2F2F2;
+}
+.footerAuth .footer__ultimo {
+  background-color: #FFFFFF;
+}
+.footerAuth .footer__ultimo .footer__ultimo--derechos {
+  color: #000000;
+}

@@ -1,0 +1,94 @@
+@use '../../base/mixins' as m;
+@use '../../base/variables' as v;
+
+.contenidoProduct__contenedor{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .contenidoProduct__boton{
+    cursor: pointer;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    outline: none;
+    background-color: v.$verde;
+    color: v.$blanco;
+
+  }
+}
+
+.contenidoProduct{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:2rem;
+}
+
+.contenido__seccion{
+  position: relative;
+  overflow: hidden;
+
+  .contenido__imagen{
+    width: 100%;
+    height: auto;              // o la altura que uses
+    background-size: cover;
+    background-position: center;
+    display: block;
+  }
+
+  .contenido__relative{
+    position: absolute;
+    inset: 0;                   // top/right/bottom/left: 0
+    background: rgba(50,43,43,.60);
+    z-index: 2;                 // por encima de la imagen y textos
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .2s ease, visibility .2s ease;
+    pointer-events: none;       // no bloquea el hover cuando está oculto
+
+    display: flex;              // para ubicar el botón
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: .75rem;
+  }
+  &:hover .contenido__relative{
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;       // ahora sí clickeable
+  }
+  .contenido__btn{
+    font-size: .75rem;
+    padding: .35rem .6rem;
+    border: 0;
+    border-radius: .5rem;
+    background: #fff;
+    cursor: pointer;
+  }
+}
+
+.color_black{
+  color: v.$negro;
+}
+
+.contenidoProduct__titulo{
+  font-size: 2.8rem;
+  margin-bottom: 2rem;
+}
+
+@include m.telefono{
+  .contenidoProduct__titulo{
+    font-size: 4rem;
+  }
+
+  .contenidoProduct{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@include m.tablet{
+  .contenidoProduct{
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+

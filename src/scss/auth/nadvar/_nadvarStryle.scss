@@ -1,0 +1,38 @@
+@use "../../base/variables" as v;
+
+.headerAuth{
+  background-color: v.$blanco;
+
+  .navegacion__enlace{
+    color: v.$negro;
+    background-color: v.$blanco;
+    &:hover{
+      color: v.$noTanNegro;
+    }
+  }
+
+  .navegacion__logo{
+    color: v.$negro;
+    &:hover{
+      color: v.$noTanNegro;
+    }
+  }
+
+  .barra__toggle{
+    color: v.$negro;
+  }
+
+  .drawer__panel{
+    background-color: v.$noTanBlanco;
+  }
+
+  .drawer__nav .navegacion__enlace{
+    &:hover{
+      //color: v.$blanco;
+      background-color: v.$blanco;
+      color: v.$negro;
+    }
+  }
+}
+
+

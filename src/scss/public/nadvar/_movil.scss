@@ -1,0 +1,111 @@
+@use "../../base/variables" as v;
+@use "../../base/mixins" as m;
+
+
+/* Estructura de la barra */
+.barra{
+  display: grid;
+  grid-template-columns: 33% 67%;
+  gap: 1rem;
+  align-items: center;
+  justify-items: center;
+  .navegacion__logo{
+    font-size: 1.8rem;
+    color: v.$colorFontGris;
+    &:hover{
+      color: v.$blanco;
+    }
+  }
+}
+
+@include m.tablet{
+  .barra{
+    display: flex;
+  }
+}
+
+
+/* 1) Botón hamburguesa: visible solo en móvil */
+.barra__toggle{
+  z-index: 1  ; pointer-events: auto;
+  width:3.2rem;
+  height:3.2rem;
+  border:0;
+  background:transparent;
+  color: v.$blanco;
+  cursor:pointer;
+  font-size:2.2rem;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+@include m.tablet {  // >= v.$tablet (768px)
+  .barra__toggle{ display:none; }
+}
+
+/* 2) Nav escritorio: oculto en móvil, visible en desktop */
+.navegacion{
+  display:none;
+  gap: 0 2rem ; }
+
+@include m.tablet {
+  .navegacion{ display:flex; }
+}
+
+/* 3) Drawer móvil (off-canvas) */
+.drawer{
+  display: none;                /* cuando está cerrado NO cubre nada */
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+}
+.drawer__panel{
+  position:absolute; top:0; left:0; height:100%; width:28rem;
+  background: v.$grisOscuro; color: v.$blanco;
+  transform:translateX(-100%); transition:transform .3s ease;
+  box-shadow:0 10px 30px rgba(0,0,0,.4); padding:2rem 1.5rem;
+  display:flex; flex-direction:column; gap:1rem;
+}
+.drawer__nav .navegacion__enlace{
+  display:block;
+  padding:1rem 0;
+  color: v.$colorFontGris;
+  &:hover{
+    color: v.$blanco;
+  }
+}
+
+.drawer__backdrop{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0);
+  transition:background .3s ease;
+  z-index: 1; pointer-events: auto;
+}
+.drawer--open{
+  display: block;               /* solo cuando abras, aparece */
+}
+.drawer--open .drawer__panel{
+  z-index: 2;
+  pointer-events: auto;
+  transform:translateX(0);
+}
+.drawer--open .drawer__backdrop{ background:rgba(0,0,0,.45); }
+
+/* En desktop, el drawer no se muestra */
+@include m.tablet {
+  .drawer{ display:none; }
+}
+
+/* Botón cerrar del drawer */
+.drawer__close {
+  position: absolute;
+  top: .5rem;
+  right: .5rem;
+  width: 2.8rem;
+  height: 2.8rem;
+  border: 0;
+  background: transparent;
+  color: v.$blanco;
+  font-size: 2.2rem;
+  cursor: pointer;
+}

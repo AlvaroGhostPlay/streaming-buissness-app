@@ -1,0 +1,43 @@
+<div class="contenedor">
+  <div class="barra">
+    <div>
+      <a class="navegacion__logo" href="#">
+        <!--<img class="navegacion__logo" src="../../../img/logo2.png" alt="">-->
+        Streaming GT
+      </a>
+
+    </div>
+    <!-- Botón hamburguesa: solo móvil -->
+    <button class="barra__toggle"
+            type="button"
+            aria-controls="mobile-drawer"
+            [attr.aria-expanded]="drawerOpen"
+            (click)="toggleDrawer()">
+      ☰
+    </button>
+    <nav class="navegacion">
+      <a class="navegacion__enlace" [routerLink]="['/inicio']">Inicio</a>
+      <a class="navegacion__enlace" [routerLink]="['/sobre_nosotros']">Sobre Nosotros</a>
+      <a class="navegacion__enlace" [routerLink]="['/contacto']">Contacto</a>
+      <a class="navegacion__enlace" [routerLink]="['/login']">Login</a>
+    </nav>
+  </div>
+</div>
+
+<!-- Drawer móvil -->
+<aside id="mobile-drawer"
+       class="drawer"
+       [class.drawer--open]="drawerOpen"
+       (keydown.escape)="closeDrawer()">
+  <div class="drawer__panel">
+    <button class="drawer__close" type="button" (click)="closeDrawer()">×</button>
+    <nav class="drawer__nav" aria-label="Menú móvil">
+      <a class="navegacion__enlace" (click)="closeDrawer()" [routerLink]="['/inicio']">Inicio</a>
+      <a class="navegacion__enlace" (click)="closeDrawer()" [routerLink]="['/sobre_nosotros']">Sobre Nosotros</a>
+      <a class="navegacion__enlace" (click)="closeDrawer()" [routerLink]="['/contacto']">Contacto</a>
+      <a class="navegacion__enlace" (click)="closeDrawer()" [routerLink]="['/login']">Login</a>
+    </nav>
+  </div>
+  <div class="drawer__backdrop" (click)="closeDrawer()"></div>
+</aside>
+

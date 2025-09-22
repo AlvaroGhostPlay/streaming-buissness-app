@@ -1,0 +1,105 @@
+@use '../../base/mixins' as m;
+@use '../../base/variables' as v;
+
+.users{
+  .users__cabecera{
+    margin: 2rem 0;
+  }
+
+  .user__agregar{
+    display: flex;
+    justify-content: end;
+  }
+
+  .users__boton{
+    background-color: v.$verde;
+    color: v.$blanco;
+  }
+
+  .users__agregar{
+    display: flex;
+    justify-content: center;
+    .users__boton{
+      width: 100%;
+    }
+  }
+
+  @include m.tablet{
+    .users__agregar{
+      justify-content: end;
+      .users__boton{
+        width: auto;
+      }
+    }
+  }
+
+  .users__buscador{
+    .users__buscador--inpout{
+      width: 100%;
+      border-radius: 0.5rem;
+      border: none;
+      outline: none;
+      padding: 2rem 1rem;
+    }
+  }
+
+  @include m.tablet{
+    .users__buscador{
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+      .users__buscador--inpout{
+        width: 50rem;
+      }
+    }
+  }
+
+  .users__table{
+    width: 100%;
+    border: 1px solid v.$negro;
+    border-radius: .75rem;
+    overflow: hidden;
+    border-collapse: collapse;
+    border-spacing: 1rem;
+  }
+
+  caption {
+    text-align: left;
+    padding: .75rem 1rem;
+    font-weight: 600;
+  }
+
+  .telefono-lista, .rol-lista{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  th,td{
+    padding: 2rem 0;
+  }
+
+  thead{
+    background-color: v.$azulClaro;
+    color: v.$blanco;
+  }
+
+  tr:nth-child(even){
+    background-color: v.$colorFontGris;
+  }
+
+  tr:hover td{
+    background-color: v.$azulClaro2;
+  }
+
+  .users__botonFormulario{
+    background-color: v.$rosa;
+    color: v.$blanco;
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  .users__botonFormulario--colorAzul{
+    background-color: v.$azulClaro;
+  }
+}

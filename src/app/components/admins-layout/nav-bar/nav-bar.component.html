@@ -1,0 +1,43 @@
+<div class="contenedor nadvarAuth">
+  <div class="barra">
+    <div>
+      <a class="navegacion__logo" href="#">
+        Streaming GT
+      </a>
+
+    </div>
+    <!-- Botón hamburguesa: solo móvil -->
+    <button class="barra__toggle"
+            type="button"
+            aria-controls="mobile-drawer"
+            [attr.aria-expanded]="drawerOpen"
+            (click)="toggleDrawer()">
+      ☰
+    </button>
+    <nav class="navegacion">
+      <a class="navegacion__enlace" [routerLink]="['/auth/inicio']">Inicio</a>
+      <a class="navegacion__enlace" [routerLink]="['/auth/usuarios']">Usuarios</a>
+      <a class="navegacion__enlace" [routerLink]="['/auth/productos']">Productos</a>
+      <a class="navegacion__enlace" [routerLink]="['/auth/clientes']">Clientes</a>
+      <a class="navegacion__enlace" href="#" [style.background-image]="">a</a>
+    </nav>
+  </div>
+</div>
+
+<!-- Drawer móvil -->
+<aside id="mobile-drawer"
+       class="drawer"
+       [class.drawer--open]="drawerOpen"
+       (keydown.escape)="closeDrawer()">
+  <div class="drawer__panel">
+    <button class="drawer__close" type="button" (click)="closeDrawer()">×</button>
+    <nav class="drawer__nav" aria-label="Menú móvil">
+      <a class="navegacion__enlace" (click)="closeDrawer()" href="#" [style.background-image]="">q</a>
+      <a class="navegacion__enlace" (click)="closeDrawer()" [routerLink]="['/auth/inicio']">Inicio</a>
+      <a class="navegacion__enlace" (click)="closeDrawer()" [routerLink]="['/auth/usuarios']">Usuarios</a>
+      <a class="navegacion__enlace" (click)="closeDrawer()" [routerLink]="['/auth/productos']">Productos</a>
+      <a class="navegacion__enlace" (click)="closeDrawer()" [routerLink]="['/auth/clientes']">Clientes</a>
+    </nav>
+  </div>
+  <div class="drawer__backdrop" (click)="closeDrawer()"></div>
+</aside>

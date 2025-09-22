@@ -1,0 +1,36 @@
+<main >
+  <div class="contenedor">
+    @if (bienvenida){}
+
+    <div class="content__contenido">
+      <h1 class="content__titulo margin-top-2">Administración de Personas</h1>
+      <div class="content">
+        @for (section of sections; track section.id){
+          <a href="#"> <!--NO DEJARLO ASI YA QUE VA HACIA INICIO PERO DEL PUBLICO-->
+            <auth-section-1 [seccion]="section"/>
+          </a>
+        }
+      </div>
+    </div>
+    <div class="content__contenido">
+      <h1 class="content__titulo margin-top-2">Administración de imagenes</h1>
+      <div class="content">
+        @for (section of sections; track section.id){
+          <a href="#"> <!--NO DEJARLO ASI YA QUE VA HACIA INICIO PERO DEL PUBLICO-->
+            <auth-section-1 [seccion]="section"/>
+          </a>
+        }
+      </div>
+    </div>
+    <div class="content__contenido">
+      <h1 class="content__titulo margin-top-2">Administración de imagenes</h1>
+      <div class="content">
+        @for (section of sections; track section.id){
+          <a href="#"> <!--NO DEJARLO ASI YA QUE VA HACIA INICIO PERO DEL PUBLICO-->
+            <auth-section-1 [seccion]="section"/>
+          </a>
+        }
+      </div>
+    </div>
+  </div>
+</main>

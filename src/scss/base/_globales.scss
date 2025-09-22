@@ -1,0 +1,81 @@
+@use 'variables' as v;
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-padding-top: 0rem;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+body {
+    font-family: v.$fuente_principal;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 2rem;
+}
+
+body.theme-dark {
+  background: v.$oscuro;
+  color: v.$blanco;
+}
+
+body.theme-light {
+  background: v.$noTanBlanco;
+  color: v.$oscuro;
+}
+
+p {
+    //color: v.$colorFontGris;
+    line-height: 1.5;
+    font-size: 1.5rem;
+}
+.contenedor {
+    width: 95%;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.contenedor_contenido{
+  width: 95%;
+  max-width: 177rem;
+  margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+h1, h2, h3 {
+    margin: 0 0 5rem 0;
+    font-weight: 900;
+}
+h1 {
+    font-size: 4rem;
+}
+h2 {
+    font-size: 4.6rem;
+}
+h3 {
+    font-size: 6rem;
+    text-align: center;
+}
+img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+body > section {
+    padding: 10rem 0
+}
+
+.margin-top-2{
+  margin: 2rem 0 0 0 ;
+}
+
+.margin-top-1{
+  margin: 1rem 0 0 0 ;
+}

@@ -1,0 +1,16 @@
+.seccion{
+  max-width: 190rem;
+  width: 90%;
+  margin: 4rem auto;
+}
+
+.seccion__image{
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% auto;
+  width: 100%;
+  aspect-ratio: calc(1691/578);
+  user-select: none;
+  overflow: hidden;
+
+}

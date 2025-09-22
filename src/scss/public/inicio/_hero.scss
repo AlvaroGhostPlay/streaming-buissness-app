@@ -1,0 +1,140 @@
+@use "../../base/variables" as v;
+@use "../../base/mixins" as m;
+
+.hero{
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% auto;
+  position: relative;
+  width: 100%;
+  aspect-ratio: calc(1920/900);
+  touch-action: pan-y;
+  user-select: none;
+  overflow: hidden;
+}
+
+.hero__contenido{
+  display: grid;
+  background-size: 100% auto; /* igual a lo que usabas */
+  transition: opacity .35s ease; /* el fade */
+  touch-action: pan-y;
+  position: absolute;
+  inset: 0;                     /* ocupa todo el hero */
+  align-content: center;        /* vertical */
+  justify-items: start;         /* horizontal */
+  padding: clamp(1rem, 3vw, 2rem);
+  container-type: inline-size; //habilitamos para lo shijos
+  z-index: 2;
+}
+
+.hero__fade{
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% auto;
+  opacity: 0;                      /* empieza oculto */
+  transition: opacity .35s ease;   /* anima opacidad */
+  will-change: opacity;
+}
+
+.hero__fade.is-visible { opacity: 1; }
+
+@media (max-width: 768px) {
+  .hero__descripcion{
+    display: none;
+  }
+}
+
+@include m.tablet{
+  .hero__descripcion{
+    margin-top: 2rem;
+  }
+}
+
+.boton{
+  color: v.$negro;
+}
+
+.hero__titulo{
+  display: inline-block;
+  margin-top: -2rem;
+  /* caja proporcional 2:1 (400x200) que escala con el ancho del .hero */
+  aspect-ratio: 2 / 1;
+  width: clamp(10rem, 30cqw, 40rem); /* 20.833% del ancho del hero, min 20rem, max 40rem */
+  block-size: auto;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: contain; /* que quepa sin recortar */
+  /* setéala desde Angular con una CSS var o con style binding */
+}
+
+@container (max-width: 520px) {
+  .hero__titulo { inline-size: clamp(8rem, 40cqw, 28rem); }
+}
+
+.hero__clasificaion{
+  display: flex;
+  align-items: center;
+}
+
+.hero__contenido--ul{
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.hero__clasificaion--edad{
+  background-color: v.$grisClaro;
+  padding: 0.5rem;
+  margin: 0;
+}
+
+.margin-0{
+  margin: 0;
+}
+
+.hero__botones{
+  margin-top: 2rem;
+}
+
+/**aprender esto para poder hacer el hero completo y preguntar como es que funciona*/
+
+.hero__arrow{
+  display: none;
+}
+
+@include m.tablet{
+  .hero__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;                 /* sobre el contenido */
+    width: 5rem;
+    height: 5rem;
+    border: 0;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+
+    /* colores (usa tus variables si querés) */
+    color: v.$colorFontGris;
+    font-size: 10rem;
+    line-height: 1;
+
+    /* accesibilidad */
+    &:focus-visible { outline: 3px solid v.$grisClaro; outline-offset: 2px; }
+
+    /* hover en desktop */
+    @media (hover:hover) {
+      &:hover {color: v.$blanco}
+    }
+    background-color: transparent;
+  }
+
+  .hero__contenido .hero__arrow{
+    &--prev { left: 0;  transform: translate(-50%, -250%); }  /* fuera a la izquierda */
+    &--next { right: 0; transform: translate(40%,  -250%); }  /* fuera a la derecha */
+  }
+}

@@ -1,0 +1,96 @@
+<main class="register">
+    <div class="contenedor">
+      <div>
+        <h1 class="register__titulo">Registrate</h1>
+        <div >
+          <form (ngSubmit)="onSubmit(clientForm)" #clientForm="ngForm">
+            <div class="register__form">
+              <div class="contenedor__campo">
+              <label class="label">Primer Nombre:</label>
+                <input class="register__input margin-top-2 register__input--70" placeholder="" [(ngModel)]="name1"
+                   name="name1"
+                   type="text"
+                   required>
+            </div>
+            
+            <div class="contenedor__campo">
+              <label class="label">Segundo Nombre:</label>
+              <input class="register__input margin-top-2 register__input--67 "
+                   name="name2"
+                   type="text" placeholder="" [(ngModel)]="name2"
+                   required>
+            </div>
+            
+            <div class="contenedor__campo">
+              <label class="label">Primer Apellido:</label>
+              <input class="register__input margin-top-2 register__input--70" placeholder="" [(ngModel)]="lastname1"
+                   name="lastname1"
+                   type="text"
+                   required>
+            </div>
+
+            <div class="contenedor__campo">
+              <label class="label">Segundo Apellido:</label>
+              <input class="register__input margin-top-2 register__input--67"
+                   name="lastname2"
+                   type="text" placeholder="" [(ngModel)]="lastname2"
+                   required>
+            </div>
+
+            <div class="contenedor__campo contenedor__campo--email">
+              <label class="label">Correo:</label>
+              <input class="register__input margin-top-2"
+                   name="email"
+                   type="email" placeholder="" [(ngModel)]="user.email"
+                   required>
+            </div>
+            
+            <!-- TELÉFONOS: lista dinámica, bindeo directo al arreglo -->
+            @for (p of user.phones; let i = $index; track p.id){
+            <div class="register__phones">
+              <div class="contenedor__campo ">
+                <label class="">Teléfono {{ i + 1 }}:</label>
+                <input class="register__input contenedor__campo--phone register__input--79" [(ngModel)]="p.number" [name]="'tel'+i" type="number">
+              </div>
+
+              <div class="margin-top-2">
+              <div class="contenedor__campo">
+                <label>Tipo:</label>
+                <select [(ngModel)]="p.type" [name]="'type'+i"  [compareWith]="byPhoneType" >
+                
+                    <option selected [ngValue]="null">---Seleccione Tipo---</option>
+                    @for(t of phoneType; track t.id){
+                        <option [ngValue]="t">{{ t.code }}</option>
+                    }
+                </select>
+              </div>
+              </div>
+              <div>
+                  @if(user.phones.length > 1){
+                    <button class="register__boton" type="button" (click)="removePhone(i)" >Quitar</button>
+                  }
+              </div>
+               
+            </div>
+            }
+            </div>
+            
+            <div >
+                <button class="margin-top-2 register__boton" type="button" (click)="addPhone()" [disabled]="user.phones.length >= 2">Agregar teléfono</button>
+                <div class="boton_registro">
+                  <button class="margin-top-2 boton__login">
+                    Registrase
+                  </button>
+                </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <modal 
+    [title]="'Notificación'"
+    [message]="backendMessage"
+    [show]="isModalVisible"
+    (closed)="onModalClosed()"
+  />
+</main>

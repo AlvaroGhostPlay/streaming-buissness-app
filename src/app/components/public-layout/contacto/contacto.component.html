@@ -20,32 +20,56 @@
 
     </div>
     <div class="contacto__form">
-      <form action="">
+      <form (ngSubmit)="onSubmit()">
         <fieldset>
           <legend>Contactanos llenando todos los datos</legend>
           <div class="contacto__contenedor">
           <div class="campo">
             <label for="">Nombre</label>
-            <input class="input-text" type="text" placeholder="Nombre">
+            <input class="input-text" type="text" placeholder="Nombre" [(ngModel)]="user.name" name="name">
+            @if (errors.name != null) {
+              <div class="error">{{errors.name}}</div>
+            }
           </div>
           <div class="campo">
             <label for="">Teléfono</label>
-            <input class="input-text" type="tel" placeholder="Teléfono">
+            <input class="input-text" type="number" placeholder="Teléfono" [(ngModel)]="user.phone" name="phone">
+            @if (errors.phone != null) {
+              <div class="error">{{errors.phone}}</div>
+            }
           </div>
           <div class="campo">
             <label for="">Correo</label>
-            <input class="input-text" type="email" placeholder="Correo">
+            <input class="input-text" type="email" placeholder="Correo" [(ngModel)]="user.email" name="email">
+            @if (errors.email != null) {
+              <div class="error">{{errors.email}}</div>
+            }
           </div>
+          
+          
           <div class="campo">
-            <label for="">Mensaje</label>
-            <textarea class="input-text" name="" id=""></textarea>
+            <label>Mensaje</label>
+            <textarea class="input-text" name="" id="" [(ngModel)]="user.message" name="message"></textarea>
+            @if (errors.email != null) {
+              <div class="error">{{errors.email}}</div>
+            }
           </div>
+          
         </div>
         <div class="alinear-derecha flex">
           <input class="boton" type="submit" value="Enviar">
+        </div>
+        <div class="alinear-derecha flex">
+          <button (click)="clear()" class="boton" type="button">Limpiar</button>
         </div>
       </fieldset>
     </form>
   </div>
   </div>
+  <modal 
+    [title]="'Notificación'"
+    [message]="backendMessage"
+    [show]="isModalVisible"
+    (closed)="onModalClosed()"
+  />
 </main>

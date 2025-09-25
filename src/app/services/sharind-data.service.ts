@@ -12,7 +12,8 @@ export class SharindDataService {
   }
 
   private _handlerLoginEventEmitter = new EventEmitter();
-
+ 
+  handlerUsernameEventEmitter = new EventEmitter<string>();
   handlerUserCreateEventEmitter = new EventEmitter<any>();
   handlerUserUpdateEventEmitter = new EventEmitter<{id: number, payload: any}>();
   handlerUserDeleteEventEmitter = new EventEmitter<{id: number}>();
@@ -24,5 +25,12 @@ export class SharindDataService {
 
   get handlerLoginEventEmitter(){
     return this._handlerLoginEventEmitter;
+  }
+
+  private _username$ = new BehaviorSubject<string | null>(null);
+  username$ = this._username$.asObservable();
+
+  setUsername(username: string) {
+    this._username$.next(username);
   }
 }

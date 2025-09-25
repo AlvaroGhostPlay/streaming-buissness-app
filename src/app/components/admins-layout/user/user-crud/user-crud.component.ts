@@ -12,6 +12,7 @@ import {PhonesReq} from '../../../../models/phones';
 import {Router} from '@angular/router';
 import {UserService} from '../../../../services/user.service';
 import {Client} from '../../../../models/client';
+import { RegisterService } from '../../../../services/register.service';
 
 @Component({
   selector: 'auth-user-crud',
@@ -31,25 +32,38 @@ export class UserCrudComponent {
               private roleService: RoleService,
               private userService: UserService,
               private phoneTypeService: PhonetypeService,
-              private routes: Router) {
+              private routes: Router,
+              private resgisterService: RegisterService) {
   }  // <- nombre corregido
 
   ngOnInit() {
     this.sub = this.sharingData.user$.subscribe(u => {
       if (u?.id) {
-        // 1) Normaliza los phones desde la respuesta del backend (lo que sea que venga)
-        const normalizedRaw = this.normalizeIncomingPhones(u.client?.phones ?? []);
-        // 2) Dedup por número+tipo
-        const cleanPhones = this.dedupePhones(normalizedRaw);
-        // 3) Fuerza a que el form tenga 2 entradas
-        const phonesForForm = this.normalizePhones(cleanPhones);
+        
+        
+        if(u.client?.phones != null){
+          // 1) Normaliza los phones desde la respuesta del backend (lo que sea que venga)
+          const normalizedRaw = this.normalizeIncomingPhones(u.client?.phones ?? []);
+          // 2) Dedup por número+tipo
+          const cleanPhones = this.dedupePhones(normalizedRaw);
+          // 3) Fuerza a que el form tenga 2 entradas
+          const phonesForForm = this.normalizePhones(cleanPhones);
 
-        const clientP: Client = {
-          ...(u.client as any),
-          phones: phonesForForm,
-        };
+          
+          const clientP: Client = {
+            ...(u.client as any),
+            phones: phonesForForm,
+          };
 
-        this.user = { ...(u as any), client: clientP } as UserDtoPassword;
+          this.user = { ...(u as any), client: clientP } as UserDtoPassword;
+        }else{
+          const clientP: Client = {
+            ...(u.client as any),
+            phones: this.emptyPhone()
+          }
+          this.user = {... (u as any), client:clientP} as UserDtoPassword;
+        }
+
       } else {
         this.user = this.newEmptyUser();
       }
@@ -83,14 +97,15 @@ export class UserCrudComponent {
   newEmptyUser(): UserDtoPassword {
     return {
       id: 0,
+      client:{
+        name: '',
+        lastname: '',
+        email: '',
+        phones: [this.emptyPhone()]
+      },
       username: '',
-      name: '',
-      lastname: '',
-      email: '',
       password: '',
-      roles: [],
-      phones: [this.emptyPhone()
-      ]
+      roles: []
     } as unknown as UserDtoPassword;
   }
 
@@ -125,7 +140,7 @@ export class UserCrudComponent {
       });
     } else {
       // CREATE directo desde el form
-      this.userService.save(body).subscribe({
+      this.resgisterService.saveRegister(body).subscribe({
         next: () => {
           this.sharingData.setUser(null);
           this.routes.navigate(['/auth/usuarios']);
@@ -182,19 +197,19 @@ export class UserCrudComponent {
   }
 
   /** Elimina duplicados por (número + tipo.code). Si no hay tipo, dedup solo por número */
-  private dedupePhones(arr: PhonesReq[]): PhonesReq[] {
-    const map = new Map<string, PhonesReq>();
-    for (const p of arr ?? []) {
-      const num = this.normalizePhone(p?.number ?? '');
-      if (!num) continue; // omite vacíos
-      const code = p?.type?.code ?? '';
-      const key = `${num}|${code}`;
-      if (!map.has(key)) {
-        // @ts-ignore
-        map.set(key, { id: p?.id, number: num, type: code ? { code } : null });
+  private dedupePhones(arr: PhonesReq[]): PhonesReq[]{
+      const map = new Map<string, PhonesReq>();
+      for (const p of arr ?? []) {
+        const num = this.normalizePhone(p?.number ?? '');
+        if (!num) continue; // omite vacíos
+        const code = p?.type?.code ?? '';
+        const key = `${num}|${code}`;
+        if (!map.has(key)) {
+          // @ts-ignore
+          map.set(key, { id: p?.id, number: num, type: code ? { code } : null });
+        }
       }
-    }
-    return [...map.values()];
+      return [...map.values()];
   }
 
   /** Garantiza 2 filas para el form. Si falta tipo, deja null o pon un default si quieres. */
@@ -218,7 +233,8 @@ export class UserCrudComponent {
   }
 
   private emptyPhone(): PhonesReq {
-    return { id: undefined, number: '', type: null };  // o {code:'WORK'} si quieres default
+    const type: PhoneTypeDto = {id: 0, name: '', code:''}
+    return { id: undefined, number: '', type: type };  // o {code:'WORK'} si quieres default
   }
 
 }

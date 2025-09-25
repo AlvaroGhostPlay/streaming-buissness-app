@@ -536,6 +536,10 @@ body > section {
   cursor: pointer;
 }
 
+.error {
+  color: #ff0000;
+}
+
 .hero {
   background-repeat: no-repeat;
   background-position: top center;
@@ -975,6 +979,16 @@ body > section {
     padding: 2rem 1rem;
   }
 }
+.login__enlaces {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+.login__enlaces a {
+  color: #FFFFFF;
+}
+
 /* Estructura de la barra */
 .barra {
   display: grid;
@@ -1227,6 +1241,137 @@ body > section {
     margin: 0;
   }
 }
+.register {
+  margin: 10rem 0;
+}
+.register .register__titulo {
+  text-align: center;
+  margin-bottom: 7rem;
+}
+.register .contenedor__campo {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.register .contenedor__campo .register__input {
+  width: 100%;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #272727;
+  color: #FFFFFF;
+}
+.register .contenedor__campo .register__input::placeholder {
+  color: #FFFFFF;
+}
+@media (min-width: 769px) {
+  .register .register__form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  .register .register__form .contenedor__campo {
+    flex-direction: row;
+  }
+  .register .register__form .contenedor__campo .register__input--70 {
+    width: 70%;
+  }
+  .register .register__form .contenedor__campo .register__input--67 {
+    width: 67%;
+  }
+  .register .register__form .contenedor__campo .register__input--79 {
+    width: 79%;
+  }
+  .register .register__form .contenedor__campo--email {
+    grid-column: 1/3;
+    grid-row: 3/4;
+  }
+  .register .register__form .contenedor__campo--email input {
+    width: 100%;
+  }
+  .register .contenedor__campo {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+}
+.register .label {
+  width: auto;
+}
+.register .register__phones {
+  display: flex;
+  flex-direction: column;
+}
+.register .register__boton {
+  background-color: #272727;
+  color: #FFFFFF;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 2rem;
+  padding: 0.7rem 1.7rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.register select {
+  background-color: transparent;
+  color: #FFFFFF;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #272727;
+}
+.register select option {
+  background-color: #000000;
+  border: none;
+  outline: none;
+}
+
+.forget {
+  margin: 20rem 0;
+}
+.forget h1 {
+  text-align: center;
+}
+.forget p {
+  text-align: center;
+}
+.forget .forget__content .forget__content--input {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.forget .forget__content .forget__input {
+  margin: 0;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #272727;
+  background-color: transparent;
+  width: 90%;
+  color: #FFFFFF;
+}
+@media (min-width: 769px) {
+  .forget .forget__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin: 0;
+  }
+  .forget .forget__content--email {
+    grid-column: 1/3;
+  }
+  .forget .forget__content--email .forget__input--email {
+    width: 95%;
+  }
+  .forget .forget__input {
+    width: 85%;
+  }
+}
+.forget .forget__input--correo {
+  grid-column: 1/3;
+}
+
 .headerAuth {
   background-color: #FFFFFF;
 }
@@ -1367,7 +1512,7 @@ body > section {
   background-color: #c8cfd7;
 }
 .users .users__botonFormulario {
-  background-color: #ff0a35;
+  background-color: #ff0000;
   color: #FFFFFF;
   font-size: 1.5rem;
   margin: 0;
@@ -1484,4 +1629,52 @@ body > section {
 }
 .footerAuth .footer__ultimo .footer__ultimo--derechos {
   color: #000000;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: #595959;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  min-width: 300px;
+  max-width: 500px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #007bff;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background: #0056b3;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

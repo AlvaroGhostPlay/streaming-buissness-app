@@ -36,7 +36,7 @@
           <option disabled [ngValue]="null" >---Selecciona Rol---</option>
         }
         @for(r of roles; track r.id){
-          @if(r.id != null && user.roles.length == 1){
+          @if( r.id == roles.length){
             <option selected [ngValue]="r.role">{{ r.role }}</option>
           } @else {
             <option [ngValue]="r.role">{{ r.role }}</option>

@@ -12,6 +12,9 @@ import {AdminsLayoutComponent} from './components/admins-layout/admins-layout.co
 import {AuthInicioComponent} from './components/admins-layout/inicio/inicio.component';
 import {AuthProductCrudComponent} from './components/admins-layout/product/product-crud/product-crud.component';
 import {UserCrudComponent} from './components/admins-layout/user/user-crud/user-crud.component';
+import { ChangePasswordComponent } from './components/public-layout/change-password/change-password.component';
+import { RegistrarseComponent } from './components/public-layout/registrarse/registrarse.component';
+import { ForgetPasswordComponent } from './components/public-layout/forget-password/forget-password.component';
 
 export const routes: Routes = [
   {
@@ -53,6 +56,9 @@ export const routes: Routes = [
       { path: 'contacto', component: ContactoComponent },
       { path: 'sobre_nosotros', component: NosotrosComponent },
       { path: 'login', component: LoginComponent },
+      { path: 'newPass', component: ChangePasswordComponent },
+      { path: 'registrarse', component: RegistrarseComponent },
+      { path: 'forget-password', component: ForgetPasswordComponent },
     ],
     canMatch: [isPublic]
   },

@@ -21,7 +21,7 @@ export class AuthService {
               @Inject(PLATFORM_ID) private platformId: Object) { }
 
   loginUser({username, password}: any):Observable<any>{
-    console.log(username, password);
+    console.log(username +' '+ password)
     return this.http.post<any>(this.url, {username, password});
   }
 

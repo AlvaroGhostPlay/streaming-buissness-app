@@ -1,1 +1,8 @@
 <router-outlet/>
+
+<modal 
+    [title]="'Notificación'"
+    [message]="backendMessage"
+    [show]="isModalVisible"
+    (closed)="onModalClosed()"
+  />

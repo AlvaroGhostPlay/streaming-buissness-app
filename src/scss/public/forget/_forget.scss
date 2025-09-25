@@ -1,0 +1,54 @@
+@use '../../base/variables' as v;
+@use '../../base/mixins' as m;
+
+.forget{
+    margin: 20rem 0;
+    h1{
+        text-align: center;
+    }
+    p{
+        text-align: center;
+    }
+    .forget__content{
+        
+        .forget__content--input{
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .forget__input{
+                margin: 0;
+                border: none;
+                outline: none;
+                border-bottom: 1px solid v.$grisClaro;
+                background-color: transparent;
+                width: 90%;
+                color: v.$blanco;
+            }
+    }
+
+    @include m.tablet{
+        .forget__content{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin: 0;
+        }
+        .forget__content--email{
+            grid-column: 1/3;
+            .forget__input--email{
+                width: 95%;
+                
+            }
+        }
+        
+        .forget__input{
+                width: 85%;
+            }
+    }
+
+    .forget__input--correo{
+        grid-column: 1/3;
+    }
+}

@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {User} from '../../../models/user';
 import {SharindDataService} from '../../../services/sharind-data.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'login',
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './login.component.html',
   standalone: true,
 })
@@ -18,15 +19,9 @@ export class LoginComponent {
 
   onSubmit(){
     if (!this.user.username || !this.user.password){
-      // @ts-ignore
-      Swal.fire(
-        'Error de validacion',
-        'Username y passwprd Requerido',
-        'Error'
-      )
+      
     } else{
       this.sharinData.handlerLoginEventEmitter.emit({username: this.user.username, password: this.user.password});
-      console.log(this.user)
     }
   }
 }
